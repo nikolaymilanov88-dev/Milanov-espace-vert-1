@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Milanov Espace Vert - Demande de devis</title>
+<style>
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f6f8; margin: 0; padding: 0; }
+.container { max-width: 650px; margin: 40px auto; background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
+h1 { text-align: center; color: #27ae60; margin-bottom: 5px; }
+h2 { text-align: center; color: #2c3e50; margin-bottom: 25px; font-weight: normal; }
+label { display: block; margin-top: 15px; font-weight: 600; color: #34495e; }
+input, textarea, select, button { width: 100%; padding: 12px; margin-top: 5px; border-radius: 8px; font-size: 14px; }
+input, textarea, select { border: 1px solid #ccc; }
+input:focus, textarea:focus, select:focus { border-color: #27ae60; box-shadow: 0 0 5px rgba(39, 174, 96, 0.5); outline: none; }
+button { margin-top: 25px; background-color: #27ae60; color: white; border: none; font-size: 16px; font-weight: 600; cursor: pointer; }
+button:hover { background-color: #219150; }
+.small-text { font-size: 12px; color: #7f8c8d; margin-top: 5px; }
+.info { text-align: center; font-size: 14px; color: #7f8c8d; margin-bottom: 20px; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Milanov Espace Vert</h1>
+  <h2>Demande de devis - Jardinier & Espace Vert</h2>
+  <p class="info">Contactez-nous : nikolaymilanov881@gmail.com | Adresse : 5 Rue du Pont Saint-Martin</p>
+
+  <form id="devisForm" action="https://formspree.io/f/mpwvrzjn" method="POST">
+    <input type="hidden" name="_subject" value="Nouvelle demande de devis Milanov Espace Vert">
+    <input type="hidden" name="_cc" value="nikolaymilanov881@gmail.com">
+
+    <label for="nom">Nom complet :</label>
+    <input type="text" id="nom" name="nom" placeholder="Ton nom" required>
+
+    <label for="email">Email :</label>
+    <input type="email" id="email" name="_replyto" placeholder="nikolaymilanov881@gmail.com" required>
+
+    <label for="telephone">Téléphone :</label>
+    <input type="tel" id="telephone" name="telephone" placeholder="06XXXXXXXX" required>
+
+    <label for="adresse">Adresse :</label>
+    <textarea id="adresse" name="adresse" placeholder="Rue, Ville, Code postal" required></textarea>
+
+    <label for="surface">Surface du jardin (en m²) :</label>
+    <input type="number" id="surface" name="surface" placeholder="Ex: 120" required>
+
+    <label for="services">Services demandés :</label>
+    <select id="services" name="services[]" multiple size="8">
+      <option value="tonte">Tonte</option>
+      <option value="taille_haie">Taille de haies</option>
+      <option value="entretien">Entretien général</option>
+      <option value="plantation">Plantation / Fleurs</option>
+      <option value="desherbage">Désherbage</option>
+      <option value="arrosage">Arrosage automatique</option>
+      <option value="amenagement">Aménagement paysager</option>
+      <option value="autre">Autre</option>
+    </select>
+    <span class="small-text">Pour sélectionner plusieurs services, maintenez Ctrl ou Cmd.</span>
+
+    <label for="frequence">Fréquence du passage :</label>
+    <select id="frequence" name="frequence" required>
+      <option value="unique">Une seule fois</option>
+      <option value="hebdomadaire">Hebdomadaire</option>
+      <option value="mensuelle">Mensuelle</option>
+      <option value="annuelle">Annuelle</option>
+    </select>
+
+    <label for="date">Date souhaitée :</label>
+    <input type="date" id="date" name="date" required>
+
+    <label for="message">Message / détails supplémentaires :</label>
+    <textarea id="message" name="message" placeholder="Indiquez vos préférences ou contraintes particulières"></textarea>
+
+    <button type="submit">Envoyer la demande</button>
+  </form>
+</div>
+
+<script>
+document.getElementById('devisForm').addEventListener('submit', function(event) {
+  setTimeout(() => {
+    alert("Merci ! Votre demande a été envoyée. Vous recevrez un email de confirmation sur nikolaymilanov881@gmail.com.");
+    document.getElementById('devisForm').reset();
+  }, 500);
+});
+</script>
+
+</body>
+</html>
