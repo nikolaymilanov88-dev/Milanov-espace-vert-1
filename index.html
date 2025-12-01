@@ -1,89 +1,152 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Milanov Espace Vert - Demande de devis</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Milanov Espace Vert</title>
+
 <style>
-body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f6f8; margin: 0; padding: 0; }
-.container { max-width: 650px; margin: 40px auto; background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
-h1 { text-align: center; color: #27ae60; margin-bottom: 5px; }
-h2 { text-align: center; color: #2c3e50; margin-bottom: 25px; font-weight: normal; }
-label { display: block; margin-top: 15px; font-weight: 600; color: #34495e; }
-input, textarea, select, button { width: 100%; padding: 12px; margin-top: 5px; border-radius: 8px; font-size: 14px; }
-input, textarea, select { border: 1px solid #ccc; }
-input:focus, textarea:focus, select:focus { border-color: #27ae60; box-shadow: 0 0 5px rgba(39, 174, 96, 0.5); outline: none; }
-button { margin-top: 25px; background-color: #27ae60; color: white; border: none; font-size: 16px; font-weight: 600; cursor: pointer; }
-button:hover { background-color: #219150; }
-.small-text { font-size: 12px; color: #7f8c8d; margin-top: 5px; }
-.info { text-align: center; font-size: 14px; color: #7f8c8d; margin-bottom: 20px; }
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f4f4f4;
+    }
+
+    header {
+        background: #2e7d32;
+        color: white;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    header img {
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        background: white;
+        object-fit: cover;
+    }
+
+    h1 {
+        margin: 0;
+        font-size: 26px;
+    }
+
+    nav {
+        background: #1b5e20;
+        padding: 10px;
+        text-align: center;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 18px;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    .services {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    form {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+
+    input, select, textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 8px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    button {
+        margin-top: 10px;
+        padding: 12px;
+        width: 100%;
+        background: #2e7d32;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+    }
 </style>
 </head>
+
 <body>
 
-<div class="container">
-  <h1>Milanov Espace Vert</h1>
-  <h2>Demande de devis - Jardinier & Espace Vert</h2>
-  <p class="info">Contactez-nous : nikolaymilanov881@gmail.com | Adresse : 5 Rue du Pont Saint-Martin</p>
+<header>
+    <!-- Change juste l'image ici -->
+    <img src="https://cdn-icons-png.flaticon.com/512/619/619034.png" alt="Logo">
+    <h1>Milanov Espace Vert</h1>
+</header>
 
-  <form id="devisForm" action="https://formspree.io/f/mpwvrzjn" method="POST">
-    <input type="hidden" name="_subject" value="Nouvelle demande de devis Milanov Espace Vert">
-    <input type="hidden" name="_cc" value="nikolaymilanov881@gmail.com">
+<nav>
+    <a href="#services">Nos services</a>
+    <a href="#contact">Demande de devis</a>
+</nav>
 
-    <label for="nom">Nom complet :</label>
-    <input type="text" id="nom" name="nom" placeholder="Ton nom" required>
+<section id="services">
+    <h2>🌿 Nos services</h2>
 
-    <label for="email">Email :</label>
-    <input type="email" id="email" name="_replyto" placeholder="nikolaymilanov881@gmail.com" required>
+    <div class="services">
+        <p>✔️ Tonte de pelouse</p>
+        <p>✔️ Taille de haies & arbustes</p>
+        <p>✔️ Nettoyage jardin, débroussaillage</p>
+        <p>✔️ Ramassage déchets verts</p>
+        <p>✔️ Entretien complet (abonnement mensuel)</p>
+        <p>✔️ Interventions ponctuelles</p>
+        <p>✔️ Création de petits espaces verts</p>
+    </div>
+</section>
 
-    <label for="telephone">Téléphone :</label>
-    <input type="tel" id="telephone" name="telephone" placeholder="06XXXXXXXX" required>
+<section id="contact">
+    <h2>📬 Demande de devis</h2>
 
-    <label for="adresse">Adresse :</label>
-    <textarea id="adresse" name="adresse" placeholder="Rue, Ville, Code postal" required></textarea>
+    <form action="https://formspree.io/f/mpwvrzjn" method="POST">
 
-    <label for="surface">Surface du jardin (en m²) :</label>
-    <input type="number" id="surface" name="surface" placeholder="Ex: 120" required>
+        <label>Nom complet :</label>
+        <input type="text" name="nom" required>
 
-    <label for="services">Services demandés :</label>
-    <select id="services" name="services[]" multiple size="8">
-      <option value="tonte">Tonte</option>
-      <option value="taille_haie">Taille de haies</option>
-      <option value="entretien">Entretien général</option>
-      <option value="plantation">Plantation / Fleurs</option>
-      <option value="desherbage">Désherbage</option>
-      <option value="arrosage">Arrosage automatique</option>
-      <option value="amenagement">Aménagement paysager</option>
-      <option value="autre">Autre</option>
-    </select>
-    <span class="small-text">Pour sélectionner plusieurs services, maintenez Ctrl ou Cmd.</span>
+        <label>Email :</label>
+        <input type="email" name="email" required>
 
-    <label for="frequence">Fréquence du passage :</label>
-    <select id="frequence" name="frequence" required>
-      <option value="unique">Une seule fois</option>
-      <option value="hebdomadaire">Hebdomadaire</option>
-      <option value="mensuelle">Mensuelle</option>
-      <option value="annuelle">Annuelle</option>
-    </select>
+        <label>Adresse :</label>
+        <input type="text" name="adresse" value="5 rue du pont Saint Martin" required>
 
-    <label for="date">Date souhaitée :</label>
-    <input type="date" id="date" name="date" required>
+        <label>Type d'intervention :</label>
+        <select name="service" required>
+            <option value="Tonte de pelouse">Tonte de pelouse</option>
+            <option value="Taille de haies">Taille de haies</option>
+            <option value="Nettoyage du jardin">Nettoyage du jardin</option>
+            <option value="Débroussaillage">Débroussaillage</option>
+            <option value="Ramassage déchets verts">Ramassage déchets verts</option>
+            <option value="Entretien mensuel">Entretien mensuel</option>
+            <option value="Entretien annuel">Entretien annuel</option>
+        </select>
 
-    <label for="message">Message / détails supplémentaires :</label>
-    <textarea id="message" name="message" placeholder="Indiquez vos préférences ou contraintes particulières"></textarea>
+        <label>Demande :</label>
+        <textarea name="message" rows="5"></textarea>
 
-    <button type="submit">Envoyer la demande</button>
-  </form>
-</div>
-
-<script>
-document.getElementById('devisForm').addEventListener('submit', function(event) {
-  setTimeout(() => {
-    alert("Merci ! Votre demande a été envoyée. Vous recevrez un email de confirmation sur nikolaymilanov881@gmail.com.");
-    document.getElementById('devisForm').reset();
-  }, 500);
-});
-</script>
+        <button type="submit">Envoyer la demande</button>
+    </form>
+</section>
 
 </body>
 </html>
