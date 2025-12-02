@@ -4,60 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Milanov Espace Vert</title>
+
     <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f7f7f7;
+            font-family: "Poppins", sans-serif;
+            background: #f5f5f5;
             color: #222;
         }
 
         header {
-            background-image: url('https://i.imgur.com/8vSxs9E.jpeg');
+            background-image: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6');
             background-size: cover;
             background-position: center;
-            height: 70vh;
+            height: 65vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
-            color: white;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+            color: #fff;
+            text-shadow: 0 0 10px #000;
         }
 
         header h1 {
-            font-size: 3.2rem;
+            font-size: 45px;
             margin: 0;
         }
 
         header p {
-            font-size: 1.2rem;
-            margin-top: 10px;
+            font-size: 20px;
+            opacity: 0.9;
         }
 
         .section-title {
             text-align: center;
-            font-size: 2rem;
             margin: 50px 0 20px;
-            font-weight: 700;
+            font-size: 32px;
+            font-weight: 600;
         }
 
+        /* Services */
         .services {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 25px;
             padding: 20px;
-            max-width: 1100px;
+            width: 90%;
             margin: auto;
         }
 
         .service-card {
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            text-align: center;
-            transition: 0.2s;
+            transition: 0.3s;
         }
 
         .service-card:hover {
@@ -65,151 +66,160 @@
         }
 
         .service-card img {
-            width: 60px;
-            margin-bottom: 10px;
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
         }
 
-        .form-container {
-            max-width: 1100px;
+        .service-card h3 {
+            margin: 15px;
+            font-size: 21px;
+        }
+
+        .service-card p {
+            margin: 10px 15px 20px;
+            opacity: 0.8;
+        }
+
+        /* Formulaire */
+        .form-section {
+            width: 90%;
+            background: #fff;
             margin: 50px auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            padding: 20px;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        input, select, textarea {
-            padding: 14px;
+        form input, form select, form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 12px;
             border-radius: 8px;
             border: 1px solid #ccc;
-            font-size: 1rem;
+            font-size: 16px;
+            outline: none;
+        }
+
+        textarea {
+            height: 120px;
         }
 
         button {
-            padding: 15px;
-            border: none;
-            border-radius: 10px;
-            background: #2d7a31;
-            color: white;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-
-        button:hover {
-            background: #256628;
-        }
-
-        .form-img {
+            margin-top: 20px;
             width: 100%;
-            border-radius: 12px;
+            padding: 14px;
+            border: none;
+            background: #2e7d32;
+            color: white;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
         }
 
         footer {
-            text-align: center;
+            margin-top: 50px;
             padding: 25px;
-            background: #2d7a31;
-            color: white;
-            margin-top: 40px;
+            text-align: center;
+            background: #222;
+            color: #fff;
         }
     </style>
 </head>
+
 <body>
 
 <header>
     <h1>Milanov Espace Vert</h1>
-    <p>Entretien & création d’espaces verts – Pro • Sérieux • Rapide</p>
+    <p>Votre expert jardin sur Saint-Martin • Soin • Propreté • Rapidité</p>
 </header>
 
-<h2 class="section-title">🌿 Nos Services</h2>
+<h2 class="section-title">Nos Services</h2>
 
 <div class="services">
 
     <div class="service-card">
-        <img src="https://i.imgur.com/Wl7o3dh.png" alt="">
-        <h3>Taille de haies</h3>
-    </div>
-
-    <div class="service-card">
-        <img src="https://i.imgur.com/5m2XBBE.png" alt="">
+        <img src="https://images.unsplash.com/photo-1602526219045-8911c106c52f">
         <h3>Tonte de pelouse</h3>
+        <p>Une pelouse propre et nette, toute l'année.</p>
     </div>
 
     <div class="service-card">
-        <img src="https://i.imgur.com/p0Yevka.png" alt="">
+        <img src="https://images.unsplash.com/photo-1598454443569-99f5fd3e0f94">
+        <h3>Taille de haies</h3>
+        <p>Haies droites, propres et bien entretenues.</p>
+    </div>
+
+    <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1602524815029-8f3c5f3c7a1a">
         <h3>Élagage léger</h3>
+        <p>Entretien des arbres pour plus de lumière et sécurité.</p>
     </div>
 
     <div class="service-card">
-        <img src="https://i.imgur.com/QuvE8wS.png" alt="">
+        <img src="https://images.unsplash.com/photo-1589578113367-0a9b1a4e1f5b">
         <h3>Désherbage</h3>
+        <p>Allées, terrasses, bordures : fini les mauvaises herbes.</p>
     </div>
 
     <div class="service-card">
-        <img src="https://i.imgur.com/aUdZMX2.png" alt="">
+        <img src="https://images.unsplash.com/photo-1615934577985-47d1b5e8b01a">
         <h3>Débroussaillage</h3>
+        <p>Terrain propre et sécurisé, même très envahi.</p>
     </div>
 
     <div class="service-card">
-        <img src="https://i.imgur.com/OP9Q4vO.png" alt="">
+        <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6">
         <h3>Création de massifs</h3>
+        <p>Fleurs, arbustes, décoration naturelle.</p>
     </div>
-
-    <div class="service-card">
-        <img src="https://i.imgur.com/5bLJ0GL.png" alt="">
-        <h3>Évacuation de déchets verts</h3>
-    </div>
-
 </div>
 
-<h2 class="section-title">📩 Demande de devis</h2>
+<h2 class="section-title">Demande de devis</h2>
 
-<div class="form-container">
+<div class="form-section">
 
-    <form>
-        <input type="text" placeholder="Nom complet" required>
-        <input type="text" placeholder="Adresse complète">
-        <input type="email" placeholder="Email">
-        <input type="tel" placeholder="Téléphone">
+    <form action="https://formspree.io/f/mpwvrzjn" method="POST">
 
-        <select>
-            <option>Choisir le type d'intervention</option>
-            <option>Taille de haies</option>
-            <option>Tonte de pelouse</option>
-            <option>Élagage léger</option>
-            <option>Désherbage</option>
-            <option>Débroussaillage</option>
-            <option>Création de massifs</option>
-            <option>Évacuation déchets verts</option>
-            <option>Autre</option>
+        <label>Nom complet :</label>
+        <input type="text" name="nom" required>
+
+        <label>Email :</label>
+        <input type="email" name="email" required>
+
+        <label>Adresse :</label>
+        <input type="text" name="adresse" placeholder="5 Rue du Pont Saint Martin">
+
+        <label>Type d’intervention :</label>
+        <select name="intervention" required>
+            <option value="Tonte">Tonte</option>
+            <option value="Taille de haies">Taille de haies</option>
+            <option value="Élagage léger">Élagage léger</option>
+            <option value="Désherbage">Désherbage</option>
+            <option value="Débroussaillage">Débroussaillage</option>
+            <option value="Création de massifs">Création de massifs</option>
+            <option value="Autre">Autre</option>
         </select>
 
-        <select>
-            <option>Fréquence (si besoin)</option>
-            <option>Une fois</option>
-            <option>Hebdomadaire</option>
-            <option>Mensuel</option>
-            <option>Saisonnier</option>
+        <label>Fréquence :</label>
+        <select name="frequence" required>
+            <option value="Une fois">Une fois</option>
+            <option value="Toutes les semaines">Toutes les semaines</option>
+            <option value="Tous les mois">Tous les mois</option>
+            <option value="1 fois par an">1 fois par an</option>
         </select>
 
-        <input type="date">
+        <label>Description supplémentaire (optionnel) :</label>
+        <textarea name="message" placeholder="Décrivez votre besoin…"></textarea>
 
-        <textarea placeholder="Détails supplémentaires"></textarea>
+        <button type="submit">Envoyer ma demande</button>
 
-        <button>Envoyer la demande</button>
     </form>
 
-    <img class="form-img" src="https://i.imgur.com/E7xZiG0.jpeg" alt="">
 </div>
 
 <footer>
-    © 2025 Milanov Espace Vert – Tous droits réservés
+    Milanov Espace Vert — Contact : nikolaymilanov881@gmail.com • Saint-Martin
 </footer>
 
 </body>
