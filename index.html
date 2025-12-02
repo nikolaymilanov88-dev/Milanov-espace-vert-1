@@ -1,165 +1,215 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Milanov Espace Vert</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-<style>
-/* Reset et typo */
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family: 'Poppins', sans-serif; line-height:1.6; background:#f4f4f4; color:#333; }
-a { text-decoration:none; color:inherit; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milanov Espace Vert</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+            color: #222;
+        }
 
-/* Header */
-header {
-    background: url('https://images.unsplash.com/photo-1594862623288-9be85a7dbf52?auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
-    height: 60vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    color:white;
-    text-align:center;
-}
-header h1 { font-size:3rem; margin-bottom:10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-header p { font-size:1.3rem; margin-bottom:20px; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
-.btn-hero { background:#2e7d32; color:white; padding:12px 30px; border:none; border-radius:5px; font-size:1.1rem; cursor:pointer; transition:0.3s; }
-.btn-hero:hover { background:#1b5e20; }
+        header {
+            background-image: url('https://i.imgur.com/8vSxs9E.jpeg');
+            background-size: cover;
+            background-position: center;
+            height: 70vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: white;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+        }
 
-/* Navigation */
-nav { background:#2e7d32; padding:10px 0; text-align:center; }
-nav a { margin:0 15px; color:white; font-weight:600; transition:0.3s; }
-nav a:hover { color:#c8e6c9; }
+        header h1 {
+            font-size: 3.2rem;
+            margin: 0;
+        }
 
-/* Sections */
-section { padding:50px 20px; max-width:1200px; margin:0 auto; }
-h2 { font-size:2rem; margin-bottom:20px; color:#2e7d32; }
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
 
-/* Services cards */
-.services-container { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap:20px; }
-.card { background:white; padding:20px; border-radius:10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition:0.3s; text-align:center; }
-.card:hover { transform: translateY(-5px); box-shadow:0 8px 15px rgba(0,0,0,0.2);}
-.card img { height:60px; margin-bottom:15px; }
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 50px 0 20px;
+            font-weight: 700;
+        }
 
-/* Formulaire */
-form { background:white; padding:30px; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
-form label { display:block; margin-top:15px; font-weight:600; }
-form input, form select, form textarea { width:100%; padding:10px; margin-top:5px; border:1px solid #ccc; border-radius:5px; }
-form textarea { resize:vertical; }
-form button { margin-top:20px; width:100%; background:#2e7d32; color:white; padding:15px; border:none; border-radius:5px; font-size:1rem; cursor:pointer; transition:0.3s; }
-form button:hover { background:#1b5e20; }
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            padding: 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
 
-/* Footer */
-footer { background:#2e7d32; color:white; padding:20px; text-align:center; }
-footer a { color:#c8e6c9; }
+        .service-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: 0.2s;
+        }
 
-/* Responsive */
-@media(max-width:768px){ header h1{font-size:2rem;} header p{font-size:1rem;} }
-</style>
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card img {
+            width: 60px;
+            margin-bottom: 10px;
+        }
+
+        .form-container {
+            max-width: 1100px;
+            margin: 50px auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            padding: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        input, select, textarea {
+            padding: 14px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
+
+        button {
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background: #2d7a31;
+            color: white;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background: #256628;
+        }
+
+        .form-img {
+            width: 100%;
+            border-radius: 12px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #2d7a31;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
 </head>
 <body>
 
 <header>
     <h1>Milanov Espace Vert</h1>
-    <p>Votre jardin entre de bonnes mains 🌿</p>
-    <a href="#contact" class="btn-hero">Demande de devis</a>
+    <p>Entretien & création d’espaces verts – Pro • Sérieux • Rapide</p>
 </header>
 
-<nav>
-    <a href="#services">Nos services</a>
-    <a href="#contact">Demande de devis</a>
-</nav>
+<h2 class="section-title">🌿 Nos Services</h2>
 
-<section id="services">
-    <h2>Nos services</h2>
-    <div class="services-container">
-        <div class="card">
-            <img src="https://cdn-icons-png.flaticon.com/512/414/414927.png" alt="Tonte de pelouse">
-            <h3>Tonte de pelouse</h3>
-            <p>Entretenez votre pelouse et gardez-la toujours parfaite.</p>
-        </div>
-        <div class="card">
-            <img src="https://cdn-icons-png.flaticon.com/512/415/415733.png" alt="Taille de haies">
-            <h3>Taille de haies</h3>
-            <p>Haies et arbustes parfaitement taillés selon vos envies.</p>
-        </div>
-        <div class="card">
-            <img src="https://cdn-icons-png.flaticon.com/512/414/414927.png" alt="Nettoyage jardin">
-            <h3>Nettoyage et débroussaillage</h3>
-            <p>Débroussaillage, nettoyage et entretien complet du jardin.</p>
-        </div>
-        <div class="card">
-            <img src="https://cdn-icons-png.flaticon.com/512/2917/2917242.png" alt="Ramassage déchets verts">
-            <h3>Ramassage déchets verts</h3>
-            <p>Nous emportons tous les déchets verts pour vous.</p>
-        </div>
-        <div class="card">
-            <img src="https://cdn-icons-png.flaticon.com/512/2920/2920562.png" alt="Entretien">
-            <h3>Entretien mensuel / annuel</h3>
-            <p>Contrats sur mesure pour un jardin toujours nickel.</p>
-        </div>
-        <div class="card">
-            <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Création espaces verts">
-            <h3>Création de petits espaces verts</h3>
-            <p>Conception et création de vos espaces verts personnalisés.</p>
-        </div>
-        <div class="card">
-            <img src="https://cdn-icons-png.flaticon.com/512/748/748113.png" alt="Intervention ponctuelle">
-            <h3>Intervention ponctuelle</h3>
-            <p>Interventions rapides et ponctuelles selon vos besoins.</p>
-        </div>
+<div class="services">
+
+    <div class="service-card">
+        <img src="https://i.imgur.com/Wl7o3dh.png" alt="">
+        <h3>Taille de haies</h3>
     </div>
-</section>
 
-<section id="contact">
-    <h2>Demande de devis</h2>
-    <form action="https://formspree.io/f/mpwvrzjn" method="POST">
-        <label>Nom complet *</label>
-        <input type="text" name="nom" required>
+    <div class="service-card">
+        <img src="https://i.imgur.com/5m2XBBE.png" alt="">
+        <h3>Tonte de pelouse</h3>
+    </div>
 
-        <label>Email *</label>
-        <input type="email" name="email" required>
+    <div class="service-card">
+        <img src="https://i.imgur.com/p0Yevka.png" alt="">
+        <h3>Élagage léger</h3>
+    </div>
 
-        <label>Téléphone</label>
-        <input type="text" name="telephone">
+    <div class="service-card">
+        <img src="https://i.imgur.com/QuvE8wS.png" alt="">
+        <h3>Désherbage</h3>
+    </div>
 
-        <label>Adresse *</label>
-        <input type="text" name="adresse" value="5 rue du pont Saint Martin" required>
+    <div class="service-card">
+        <img src="https://i.imgur.com/aUdZMX2.png" alt="">
+        <h3>Débroussaillage</h3>
+    </div>
 
-        <label>Type d’intervention *</label>
-        <select name="service" required>
-            <option value="Tonte de pelouse">Tonte de pelouse</option>
-            <option value="Taille de haies">Taille de haies</option>
-            <option value="Nettoyage du jardin">Nettoyage du jardin</option>
-            <option value="Débroussaillage">Débroussaillage</option>
-            <option value="Ramassage déchets verts">Ramassage déchets verts</option>
-            <option value="Entretien mensuel">Entretien mensuel</option>
-            <option value="Entretien annuel">Entretien annuel</option>
-            <option value="Création espaces verts">Création petits espaces verts</option>
-            <option value="Intervention ponctuelle">Intervention ponctuelle</option>
+    <div class="service-card">
+        <img src="https://i.imgur.com/OP9Q4vO.png" alt="">
+        <h3>Création de massifs</h3>
+    </div>
+
+    <div class="service-card">
+        <img src="https://i.imgur.com/5bLJ0GL.png" alt="">
+        <h3>Évacuation de déchets verts</h3>
+    </div>
+
+</div>
+
+<h2 class="section-title">📩 Demande de devis</h2>
+
+<div class="form-container">
+
+    <form>
+        <input type="text" placeholder="Nom complet" required>
+        <input type="text" placeholder="Adresse complète">
+        <input type="email" placeholder="Email">
+        <input type="tel" placeholder="Téléphone">
+
+        <select>
+            <option>Choisir le type d'intervention</option>
+            <option>Taille de haies</option>
+            <option>Tonte de pelouse</option>
+            <option>Élagage léger</option>
+            <option>Désherbage</option>
+            <option>Débroussaillage</option>
+            <option>Création de massifs</option>
+            <option>Évacuation déchets verts</option>
+            <option>Autre</option>
         </select>
 
-        <label>Date souhaitée</label>
-        <input type="date" name="date">
-
-        <label>Fréquence</label>
-        <select name="frequence">
-            <option value="Une fois">Une fois</option>
-            <option value="Hebdomadaire">Hebdomadaire</option>
-            <option value="Mensuel">Mensuel</option>
-            <option value="Annuel">Annuel</option>
+        <select>
+            <option>Fréquence (si besoin)</option>
+            <option>Une fois</option>
+            <option>Hebdomadaire</option>
+            <option>Mensuel</option>
+            <option>Saisonnier</option>
         </select>
 
-        <label>Message libre</label>
-        <textarea name="message" rows="4" placeholder="Détails supplémentaires (non obligatoire)"></textarea>
+        <input type="date">
 
-        <button type="submit">Envoyer la demande</button>
+        <textarea placeholder="Détails supplémentaires"></textarea>
+
+        <button>Envoyer la demande</button>
     </form>
-</section>
+
+    <img class="form-img" src="https://i.imgur.com/E7xZiG0.jpeg" alt="">
+</div>
 
 <footer>
-    <p>Milanov Espace Vert | 5 rue du pont Saint Martin | <a href="mailto:nikolaymilanov881@gmail.com">nikolaymilanov881@gmail.com</a></p>
+    © 2025 Milanov Espace Vert – Tous droits réservés
 </footer>
 
 </body>
